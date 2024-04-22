@@ -42,4 +42,5 @@ Background:
     And I press "Save and display"
     # Check final formula
     And I wait until Wirisformula formula exists
-    Then a Wirisformula containing 'square root of y' should exist
+    Then a Wirisformula containing '1 plus 1' should not exist
+    And a Wirisformula containing 'square root of y' should exist
