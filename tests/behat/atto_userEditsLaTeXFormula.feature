@@ -1,8 +1,8 @@
-@editor @editor_atto @atto @atto_wiris @_bug_phantomjs @wiris_mathtype @atto_wiris_latex @atto_wiris_compatibility @4.x
-Feature: Check empty LaTeX edition
+@mtmoodle-38 @atto @atto_wiris @wiris_mathtype @4.x @atto_edit_formula @atto_latex_formula
+Feature: Edit LaTeX formula inside MathType editor
 In order to check the edition of a formula in LaTeX
 As an admin
-I need to edit an empty LaTeX with MathType
+I need to edit a LaTeX with MathType
 
   Background:
     Given the following "courses" exist:
@@ -17,7 +17,7 @@ I need to edit an empty LaTeX with MathType
     And I log in as "admin"
 
   @javascript
-  Scenario: Insert MathType formula to an empty LaTeX
+  Scenario: Insert MathType formula to a LaTeX
     And I navigate to "General > Security > Site security settings" in site administration
     And I check enable trusted content
     And I press "Save changes"
@@ -32,12 +32,12 @@ I need to edit an empty LaTeX with MathType
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
       | Name | Test MathType for Atto on Moodle |
-      | Page content | $$$$ |
+      | Page content | $$\frac{x+3}{y-2}=c^2$$ |
     And I click on "Page content" field
     And I place caret at position "2" in "Page content" field
     And I press "MathType" in "Page content" field in Atto editor
     And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
-    And I wait "1" seconds
+    And I wait "10000" seconds
     And I press accept button in MathType Editor
     And I wait "1" seconds
     Then "$$\frac1{\sqrt{2\pi}}$$" "text" should exist
