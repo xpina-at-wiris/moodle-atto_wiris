@@ -1,5 +1,5 @@
-@editor @editor_atto @atto @atto_wiris @_bug_phantomjs @wiris_mathtype @3.x @4.x
-Feature: Use atto to post
+@mtmoodle-33 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula
+Feature: Insert MathType formula with atto editor
 In order to check if MathType formula can be displayed correctly
 As an admin
 I need to create a MathType formula
@@ -20,13 +20,13 @@ I need to create a MathType formula
     And I log in as "admin"
 
   @javascript
-  Scenario: Post with atto
+  Scenario: User inserts MathType with atto
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
-      | Name | Test MathType for Atto on Moodle |
+      | Name | Test WirisFormula for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
-    And I wait "1" seconds
+    And I wait until MathType editor is displayed
     And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor
