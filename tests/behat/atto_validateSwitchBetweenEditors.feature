@@ -1,4 +1,4 @@
-@mtmoodle-33 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula
+@mtmoodle-90 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula
 Feature: Insert MathType formula with atto editor
 In order to check if MathType formula can be displayed correctly
 As an admin
@@ -20,15 +20,17 @@ I need to create a MathType formula
     And I log in as "admin"
 
   @javascript
-  Scenario: User inserts MathType with atto
+  Scenario: Change from ChemType editor to MathType Editor
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
-      | Name | Test WirisFormula for Atto on Moodle |
+      | Name | Test switching between editors |
+    And I press "ChemType" in "Page content" field in Atto editor
+    And I wait until MathType editor is displayed
+    And I press cancel button in MathType Editor
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
     And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
-    And I wait "1" seconds
     And I press accept button in MathType Editor
     And I press "Save and display"
     And I wait "1" seconds
