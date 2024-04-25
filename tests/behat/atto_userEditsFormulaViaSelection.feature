@@ -1,4 +1,4 @@
-@mtmoodle-36 @atto @atto_wiris @wiris_mathtype @4.x @atto_edit_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula
 Feature: Edit MathType formula with atto editor via selection
 In order to check if MathType formula can be edited via selection
 As an admin
@@ -20,7 +20,7 @@ Background:
     And I log in as "admin"
 
   @javascript
-  Scenario: Edit MathType formula via selection
+  Scenario: MTMOODLE-36 - Edit MathType formula via selection
     # Course
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser

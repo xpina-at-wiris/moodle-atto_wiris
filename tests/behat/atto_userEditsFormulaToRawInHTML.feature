@@ -1,4 +1,4 @@
-@mtmoodle-95 @atto @atto_wiris @wiris_mathtype @4.x @atto_edit_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula
 Feature: Check if the raw code generated in html transforms the WirisFormula correctly
 In order to edit HTML code
 As an admin
@@ -17,7 +17,7 @@ I need to not loose data editing HTML code
     And I log in as "admin"
 
   @javascript
-  Scenario: Transform formula to raw code in html
+  Scenario: MTMOODLE-95 - Transform formula to raw code in html
     And I navigate to "Plugins > Text editors > Atto toolbar settings" in site administration
     And I set the field "Toolbar config" to multiline:
     """

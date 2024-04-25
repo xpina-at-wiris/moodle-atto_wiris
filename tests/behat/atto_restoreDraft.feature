@@ -1,4 +1,4 @@
-@mtmoodle-93 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula
 Feature: Check that formula is rendered when atto's draft is restored
 In order to not loose data
 As an admin
@@ -20,7 +20,7 @@ I need to restore draft content containing MathType formulas
     And I log in as "admin"
 
   @javascript
-  Scenario: Insert a formula and reload the page
+  Scenario: MTMOODLE-93 - Insert a formula and reload the page
     And I navigate to "Plugins > Text editors > Atto toolbar settings" in site administration
     And I select seconds in autosave frequency option
     And I press "Save changes"

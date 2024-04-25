@@ -1,4 +1,4 @@
-@mtmoodle-88 @atto @atto_wiris @wiris_mathtype @4.x @atto_edit_formula @atto_multiple_instances
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula @atto_multiple_instances
 Feature: Insert MathType formula with atto editor
 In order to check if MathType formula can be displayed correctly
 As an admin
@@ -20,7 +20,7 @@ I need to create a MathType formula
     And I log in as "admin"
 
   @javascript
-  Scenario: User opens ChemType editor with MathType editor already open
+  Scenario: MTMOODLE-88 - User opens ChemType editor with MathType editor already open
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
@@ -39,7 +39,7 @@ I need to create a MathType formula
     And Wirisformula should has height 19 with error of 2
 
   @javascript
-  Scenario: User opens MathType editor with ChemType editor already open
+  Scenario: MTMOODLE-88 - User opens MathType editor with ChemType editor already open
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:

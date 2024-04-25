@@ -1,4 +1,4 @@
-@mtmoodle-58 @atto @atto_wiris @wiris_mathtype @4.x @atto_edit_formula @atto_formula_type
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula @atto_formula_type
 Feature: Edit MathType styled formula with atto editor
 In order to check if styled MathType formula can be edited correctly
 As an admin
@@ -20,7 +20,7 @@ I need to create a styled MathType formula
     And I log in as "admin"
 
   @javascript
-  Scenario: User edits MathType styled with atto
+  Scenario: MTMOODLE-58 - User edits MathType styled with atto
     # Course
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser

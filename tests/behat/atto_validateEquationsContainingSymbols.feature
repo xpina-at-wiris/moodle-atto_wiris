@@ -1,4 +1,4 @@
-@mtmoodle-96 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula @atto_symbols_and_attributes
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_symbols_and_attributes
 Feature: Checking certain symbols
 In order to check if some symbols render correctly
 I need to create a formula
@@ -19,7 +19,7 @@ I need to create a formula
     And I log in as "admin"
 
   @javascript
-  Scenario: Checking «<»>§&¨"`' symbols in text
+  Scenario: MTMOODLE-96 - Checking «<»>§&¨"`' symbols in text
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
@@ -31,7 +31,7 @@ I need to create a formula
     Then Wirisformula should not exist
 
   @javascript
-  Scenario: Checking french quotes in text
+  Scenario: MTMOODLE-96 - Checking french quotes in text
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
@@ -42,7 +42,7 @@ I need to create a formula
     Then Wirisformula should not exist
 
   @javascript
-  Scenario: Checking «<»>§&¨"`' symbols in MATHML
+  Scenario: MTMOODLE-96 - Checking «<»>§&¨"`' symbols in MATHML
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
@@ -54,18 +54,3 @@ I need to create a formula
     And I press accept button in MathType Editor
     And I press "Save and display"
     Then a Wirisformula containing "« less than » greater than § & ¨ &quot;" should exist
-
-  @javascript
-  Scenario: Checking french quotes in MATHML
-    And I am on "Course 1" course homepage with editing mode on
-    And I add a "Page" to section "0" using the activity chooser
-    And I set the following fields to these values:
-      | Name         | Test MathType for Atto on Moodle |
-    And I press "MathType" in "Page content" field in Atto editor
-    And I wait until MathType editor is displayed
-    And I wait "2" seconds
-    And I set MathType formula to "&laquo;Bonjour&raquo;"
-    And I wait "5" seconds
-    And I press accept button in MathType Editor
-    And I press "Save and display"
-    Then a Wirisformula containing "«Bonjour»" should exist

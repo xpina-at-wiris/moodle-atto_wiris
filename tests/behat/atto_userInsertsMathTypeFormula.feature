@@ -1,4 +1,4 @@
-@mtmoodle-33 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula
 Feature: Insert MathType formula with atto editor
 In order to check if MathType formula can be displayed correctly
 As an admin
@@ -20,7 +20,7 @@ I need to create a MathType formula
     And I log in as "admin"
 
   @javascript
-  Scenario: User inserts MathType with atto
+  Scenario: MTMOODLE-33 - User inserts MathType with atto
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:

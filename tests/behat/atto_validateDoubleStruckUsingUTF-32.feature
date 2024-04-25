@@ -1,4 +1,4 @@
-@mtmoodle-94 @atto @atto_wiris @wiris_mathtype @4.x @atto_insert_formula @atto_symbols_and_attributes
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_symbols_and_attributes
 Feature: Test I double struck using UTF-32
 In order to create formulas with UTF-32 characters
 As an admin
@@ -17,7 +17,7 @@ I need to see a formula with a UTF-32 character
     And I log in as "admin"
 
   @javascript
-  Scenario: Insert double struck using UTF-32
+  Scenario: MTMOODLE-94 - Insert double struck using UTF-32
     And I navigate to "Plugins > Text editors > Atto toolbar settings" in site administration
     And I set the field "Toolbar config" to multiline:
     """

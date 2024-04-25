@@ -1,4 +1,4 @@
-@mtmoodle-38 @atto @atto_wiris @wiris_mathtype @4.x @atto_edit_formula @atto_latex_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula @atto_latex_formula
 Feature: Edit LaTeX formula inside MathType editor
 In order to check the edition of a formula in LaTeX
 As an admin
@@ -17,7 +17,7 @@ I need to edit a LaTeX with MathType
     And I log in as "admin"
 
   @javascript
-  Scenario: Insert MathType formula to a LaTeX
+  Scenario: MTMOODLE-38 - Insert MathType formula to a LaTeX
     And I navigate to "General > Security > Site security settings" in site administration
     And I check enable trusted content
     And I press "Save changes"
