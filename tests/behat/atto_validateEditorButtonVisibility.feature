@@ -74,3 +74,23 @@ I need to change the settings on the filter wiris
     And I add a "Page" to section "0"
     Then I check "MathType" in "Page content" field "does" exist in Atto editor
     Then I check "ChemType" in "Page content" field "does" exist in Atto editor
+
+  @javascript @mtmoodle-97
+  Scenario: MTMOODLE-97 - Disable mathtype & chemtype buttons and disable MathType filter
+    # set text editor to "atto HTML"
+    And I follow "Preferences" in the user menu
+    And I follow "Editor preferences"
+    And I set the following fields to these values:
+      | Text editor | Atto HTML editor |
+    And I press "Save changes"
+    And I navigate to "Plugins > MathType by WIRIS" in site administration
+    And I set the following fields to these values:
+      | Chemistry editor   | 0 |
+      | Math editor    | 0 |
+      | Editor always active   | 0 |
+    And I press "Save changes"
+    And the "wiris" filter is "off"
+    And I am on "Course 1" course homepage with editing mode on
+    And I add a "Page" to section "0"
+    Then I check "MathType" in "Page content" field "does not" exist in Atto editor
+    Then I check "ChemType" in "Page content" field "does not" exist in Atto editor
