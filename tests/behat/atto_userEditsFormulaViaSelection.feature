@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula @mtmoodle-36
 Feature: Edit MathType formula with atto editor via selection
 In order to check if MathType formula can be edited via selection
 As an admin

@@ -1,4 +1,4 @@
-@3.x @4.x @atto @atto_wiris @wiris_mathtype @atto_filter_editor_settings  
+@3.x @4.x @atto @atto_wiris @wiris_mathtype @atto_filter_editor_settings @mtmoodle-18
 Feature: Check the math and chem buttons visibility on text editors
 In order to check the buttons visibility in atto editor
 As an admin

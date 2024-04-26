@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_focus
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_focus @mtmoodle-75
 Feature: Insert MathType formula with atto editor only with the keyboard
 In order to check if MathType formula can be written and accepted via keyboard
 As an admin

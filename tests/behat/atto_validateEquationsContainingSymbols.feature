@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_symbols_and_attributes
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_symbols_and_attributes @mtmoodle-96
 Feature: Checking certain symbols
 In order to check if some symbols render correctly
 I need to create a formula

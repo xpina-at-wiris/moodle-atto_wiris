@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula @mtmoodle-95
 Feature: Check if the raw code generated in html transforms the WirisFormula correctly
 In order to edit HTML code
 As an admin
