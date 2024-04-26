@@ -39,7 +39,7 @@ Feature: Formulas are rendered on an Assignment feedback
     And I click on ".btn-primary" "css_element" in the "//div[@class='row']" "xpath_element"
     # 02. Grade the assignment.
     And I click on "MathType" "button"
-    And I wait "1" seconds
+    And I wait until MathType editor is displayed
     And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor
