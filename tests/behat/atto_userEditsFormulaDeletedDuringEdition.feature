@@ -1,10 +1,10 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_focus @mtmoodle-100
-Feature: Verify that we have focus after move modal window
-In order to write Mathematical formulas properly
+@4.x @atto @atto_wiris @wiris_mathtype @atto_edit_formula @mtmoodle-101
+Feature: Delete formula that is being edited
+In order to check if MathType formula can be formulas in edition
 As an admin
-I need to use the modal window
+I need to create a MathType formula
 
-  Background:
+Background:
     Given the following config values are set as admin:
       | config | value | plugin |
       | toolbar | math = wiris | editor_atto |
@@ -20,19 +20,25 @@ I need to use the modal window
     And I log in as "admin"
 
   @javascript
-  Scenario: MTMOODLE-100 - Insert formula after moving modal window
+  Scenario: MTMOODLE-101 - Edit formula being deleted
+    # Course
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
-      | Name | Test MathType for Atto on Moodle |
+      | Name | Test MathType for Atto on Moodle chemistry formulas |
+    # Insert formula.
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
-    And I click on MathType editor title bar
-    And I wait "1" seconds
-    And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
+    And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>+</mo><mn>1</mn></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor
+    # Assert that dbClick works
+    And I wait until Wirisformula formula exists
+    And I dbClick on WirisFormula with alt equals to "1 plus 1"
+    And I wait until MathType editor is displayed
+    And I click on WirisFormula with alt equals to "1 plus 1"
+    And I press the enter key
+    And I press accept button in MathType Editor
     And I press "Save and display"
-    Then I wait until Wirisformula formula exists
-    Then a Wirisformula containing 'square root' should exist
-    And Wirisformula should has height 48 with error of 2
+    # Check final formula
+    Then Wirisformula should not exist

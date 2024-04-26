@@ -24,7 +24,7 @@ Feature: Formulas are rendered on an Assignment feedback
     And I log in as "admin"
 
   @javascript
-  Scenario: Insert a MathType formula in an assignment's feedback
+  Scenario: MTMOODLE-98 - Insert a MathType formula in an assignment's feedback
     # 01. Create the assignment
     And I am on "Course 1" course homepage with editing mode on
     And I add an "Assignment" to section "0" using the activity chooser

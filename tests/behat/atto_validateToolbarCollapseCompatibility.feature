@@ -17,7 +17,7 @@ I need to write a mathtype formula
     And I log in as "admin"
     
   @javascript
-  Scenario: Insert a Formula with collapse plugin enabled
+  Scenario: MTMOODLE-99 - Insert a Formula with collapse plugin enabled
     And I navigate to "Plugins > Text editors > Atto toolbar settings" in site administration
     And I set the field "Toolbar config" to multiline:
     """
