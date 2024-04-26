@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @mtmoodle-100
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @mtmoodle-98
 Feature: Formulas are rendered on an Assignment feedback
   In order to check that formulas can be included on an assignment feedback
   As an admin
