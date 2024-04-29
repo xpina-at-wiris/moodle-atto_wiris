@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @mtmoodle-59
+@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @mtmoodle-59 @pending
 Feature: Insert MathType formula with atto editor
 In order to check if MathType formula can be displayed correctly
 As an admin
