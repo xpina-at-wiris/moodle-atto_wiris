@@ -40,6 +40,7 @@ Feature: Formulas are rendered on an Assignment feedback
     # 02. Grade the assignment.
     And I click on "MathType" "button"
     And I wait until MathType editor is displayed
+    And I wait "3" seconds
     And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor

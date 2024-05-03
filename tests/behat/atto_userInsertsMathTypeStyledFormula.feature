@@ -27,6 +27,7 @@ I need to create a styled MathType formula
       | Name | Test Styled WirisFormula for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
+    And I wait "3" seconds
     And I set MathType formula to '<math style="font-family:Arial" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="72px"><mn mathvariant="bold-italic" mathcolor="#FF0000">1</mn></mstyle></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor

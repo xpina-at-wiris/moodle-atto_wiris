@@ -29,6 +29,7 @@ Background:
     # Insert formula.
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
+    And I wait "2" seconds
     And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>+</mo><mn>1</mn></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor

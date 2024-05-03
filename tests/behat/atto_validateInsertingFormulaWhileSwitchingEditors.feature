@@ -27,8 +27,9 @@ I need to create a MathType formula
       | Name | Test Multiple Editors for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
-    And I wait "1" seconds
+    And I wait "3" seconds
     And I press "ChemType" in "Page content" field in Atto editor
+    And I wait "3" seconds
     And I set MathType formula to '<math><mi mathvariant="normal">H</mi><mn>2</mn><mi mathvariant="normal">O</mi></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor
@@ -46,8 +47,9 @@ I need to create a MathType formula
       | Name | Test Multiple Editors for Atto on Moodle |
     And I press "ChemType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
-    And I wait "1" seconds
+    And I wait "3" seconds
     And I press "MathType" in "Page content" field in Atto editor
+    And I wait "3" seconds
     And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor

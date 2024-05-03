@@ -49,8 +49,9 @@ I need to create a formula
       | Name         | Test MathType for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
-    And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&#xAB;</mo><mo>&lt;</mo><mo>&#xBB;</mo><mo>&gt;</mo><mo>&#xA7;</mo><mo>&amp;</mo><mo>&#xA8;</mo><mo>&quot;</mo></math>'
     And I wait "5" seconds
+    And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&#xAB;</mo><mo>&lt;</mo><mo>&#xBB;</mo><mo>&gt;</mo><mo>&#xA7;</mo><mo>&amp;</mo><mo>&#xA8;</mo><mo>&quot;</mo></math>'
+    And I wait "3" seconds
     And I press accept button in MathType Editor
     And I press "Save and display"
     Then a Wirisformula containing "« less than » greater than § & ¨ &quot;" should exist
