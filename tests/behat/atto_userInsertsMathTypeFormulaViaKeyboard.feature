@@ -1,4 +1,4 @@
-@4.x @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_focus @mtmoodle-75
+@atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_focus @mtmoodle-75
 Feature: Insert MathType formula with atto editor only with the keyboard
 In order to check if MathType formula can be written and accepted via keyboard
 As an admin
@@ -19,10 +19,28 @@ I need to create a MathType formula
     And the "urltolink" filter is "off"
     And I log in as "admin"
 
-  @javascript
+  @javascript @4.x @4.x_atto
   Scenario: MTMOODLE-75 - User inserts MathType with atto via keyboard
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
+    And I set the following fields to these values:
+      | Name | Test WirisFormula for Atto on Moodle |
+    And I press "MathType" in "Page content" field in Atto editor
+    And I wait until MathType editor is displayed
+    And I wait "3" seconds
+    And I set MathType formula to '<math><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3c0;</mi></msqrt></mfrac></math>'
+    And I wait "3" seconds
+    And I press the tab key
+    And I press the enter key
+    And I press "Save and display"
+    Then I wait until Wirisformula formula exists
+    Then a Wirisformula containing 'square root' should exist
+    And Wirisformula should has height 48 with error of 2
+
+  @javascript @4.0 @4.0_atto
+  Scenario: MTMOODLE-75 - User inserts MathType with atto via keyboard
+    And I am on "Course 1" course homepage with editing mode on
+    And I add a "Page" to section "0"
     And I set the following fields to these values:
       | Name | Test WirisFormula for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
