@@ -1,4 +1,4 @@
-@editor @editor_atto @atto @atto_wiris @_bug_phantomjs @wiris_mathtype @4.x
+@atto @atto_wiris @wiris_mathtype @atto_filter_editor_settings @3.x @3.x_atto @4.0 @4.0_atto @4.x @4.x_atto 
 Feature: Check MathType disabled if filter disabled at activity forum level
 In order to check if MathType plugin is disabled if filter is disabled
 As an admin
@@ -19,7 +19,7 @@ I need not to be able to use MathType if filter is disabled
     And the "urltolink" filter is "off"
     And I log in as "admin"
 
-  @javascript
+  @javascript @mtmoodle-101
   Scenario: Disable MathType at activity level
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
@@ -35,7 +35,7 @@ I need not to be able to use MathType if filter is disabled
     And I navigate to "Settings" in current page administration
     Then "MathType" "button" should not exist
 
-  @javascript
+  @javascript @mtmoodle-102
   Scenario: Disable MathType at course level
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
