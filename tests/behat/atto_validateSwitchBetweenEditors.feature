@@ -1,19 +1,19 @@
 @atto @atto_wiris @wiris_mathtype @atto_modal_window @mtmoodle-90
-Feature: Insert MathType formula with atto editor
-In order to check if MathType formula can be displayed correctly
-As an admin
-I need to create a MathType formula
+Feature: MathType and ChemType editor switch
+  In order to check if MathType formula can be displayed correctly
+  As an admin
+  I need to create a MathType formula
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
+      | config  | value        | plugin      |
       | toolbar | math = wiris | editor_atto |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And the "mathjaxloader" filter is "off"
     And the "urltolink" filter is "off"
@@ -79,7 +79,7 @@ I need to create a MathType formula
   @javascript @3.x @3.x_atto @4.0 @4.0_atto
   Scenario: MTMOODLE-90 - Change from MathType editor to ChemType Editor
     And I am on "Course 1" course homepage with editing mode on
-    And I add a "Page" to section "0" 
+    And I add a "Page" to section "0"
     And I set the following fields to these values:
       | Name | Test switching between editors |
     And I press "MathType" in "Page content" field in Atto editor
