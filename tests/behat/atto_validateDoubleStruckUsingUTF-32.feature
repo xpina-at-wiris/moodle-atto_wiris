@@ -1,16 +1,16 @@
 @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_symbols_and_attributes @mtmoodle-94
-Feature: Test I double struck using UTF-32
-In order to create formulas with UTF-32 characters
-As an admin
-I need to see a formula with a UTF-32 character
+Feature: Test double struck using UTF-32
+  In order to create formulas with UTF-32 characters
+  As an admin
+  I need to see a formula with a UTF-32 character
 
   Background:
     Given the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And the "urltolink" filter is "off"
     And the "mathjaxloader" filter is "off"
@@ -20,10 +20,10 @@ I need to see a formula with a UTF-32 character
   Scenario: MTMOODLE-94 - Insert double struck using UTF-32
     And I navigate to "Plugins > Text editors > Atto toolbar settings" in site administration
     And I set the field "Toolbar config" to multiline:
-    """
-    math = wiris
-    other = html
-    """
+      """
+      math = wiris
+      other = html
+      """
     And I press "Save changes"
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
@@ -47,10 +47,10 @@ I need to see a formula with a UTF-32 character
   Scenario: MTMOODLE-94 - Insert double struck using UTF-32
     And I navigate to "Plugins > Text editors > Atto toolbar settings" in site administration
     And I set the field "Toolbar config" to multiline:
-    """
-    math = wiris
-    other = html
-    """
+      """
+      math = wiris
+      other = html
+      """
     And I press "Save changes"
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0"

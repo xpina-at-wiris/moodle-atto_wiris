@@ -1,26 +1,26 @@
-@atto @atto_wiris @wiris_mathtype @atto_edit_formula @mtmoodle-101
-Feature: Delete formula that is being edited
-In order to check if MathType formula can be formulas in edition
-As an admin
-I need to create a MathType formula
+@atto @atto_wiris @wiris_mathtype @atto_edit_formula @mtmoodle-76
+Feature: User edits deleted formula
+  In order to check if MathType formula can be formulas in edition
+  As an admin
+  I need to create a MathType formula
 
-Background:
+  Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
+      | config  | value        | plugin      |
       | toolbar | math = wiris | editor_atto |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And the "mathjaxloader" filter is "off"
     And the "urltolink" filter is "off"
     And I log in as "admin"
 
   @javascript @4.x @4.x_atto
-  Scenario: MTMOODLE-101 - Edit formula being deleted
+  Scenario: MTMOODLE-76 - User edits deleted formula
     # Course
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0" using the activity chooser
@@ -45,7 +45,7 @@ Background:
     Then Wirisformula should not exist
 
   @javascript @4.0 @4.0_atto
-  Scenario: MTMOODLE-101 - Edit formula being deleted
+  Scenario: MTMOODLE-76 - User edits deleted formula
     # Course
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0"

@@ -1,23 +1,23 @@
 @atto @atto_wiris @wiris_mathtype @atto_insert_formula @mtmoodle-98
-Feature: Formulas are rendered on an Assignment feedback
+Feature: Insert a MathType formula in an assignment's feedback
   In order to check that formulas can be included on an assignment feedback
   As an admin
   I need to create a MathType formula on an assignment's feedback
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
+      | config  | value        | plugin      |
       | toolbar | math = wiris | editor_atto |
     And the following "users" exist:
-      | username | firstname | lastname | email |
-      | student1 | Student | 1 | student1@example.com |
+      | username | firstname | lastname | email                |
+      | student1 | Student   | 1        | student1@example.com |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
       | user     | course | role           |
-      | admin  | C1     | editingteacher |
-      | student1 | C1 | student |
+      | admin    | C1     | editingteacher |
+      | student1 | C1     | student        |
     And the "wiris" filter is "on"
     And the "mathjaxloader" filter is "off"
     And the "urltolink" filter is "off"
@@ -29,7 +29,7 @@ Feature: Formulas are rendered on an Assignment feedback
     And I am on "Course 1" course homepage with editing mode on
     And I add an "Assignment" to section "0" using the activity chooser
     And I set the following fields to these values:
-      |  Assignment name | Test MathType for Atto on Moodle |
+      | Assignment name | Test MathType for Atto on Moodle |
     And I click on "Online text" "checkbox"
     And I click on "File submissions" "checkbox"
     Then I press "Save and display"
@@ -53,14 +53,14 @@ Feature: Formulas are rendered on an Assignment feedback
     Then I follow "View all submissions"
     And I wait until Wirisformula formula exists
     And a Wirisformula containing 'square root' should exist
-  
+
   @javascript @4.0 @4.0_atto
   Scenario: MTMOODLE-98 - Insert a MathType formula in an assignment's feedback
     # 01. Create the assignment
     And I am on "Course 1" course homepage with editing mode on
     And I add an "Assignment" to section "0"
     And I set the following fields to these values:
-      |  Assignment name | Test MathType for Atto on Moodle |
+      | Assignment name | Test MathType for Atto on Moodle |
     And I click on "Online text" "checkbox"
     And I click on "File submissions" "checkbox"
     Then I press "Save and display"

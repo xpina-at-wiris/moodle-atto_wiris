@@ -1,19 +1,19 @@
 @atto @atto_wiris @wiris_mathtype @atto_insert_formula @atto_focus @mtmoodle-100
-Feature: Verify that we have focus after move modal window
-In order to write Mathematical formulas properly
-As an admin
-I need to use the modal window
+Feature: Modal window focus
+  In order to write Mathematical formulas properly
+  As an admin
+  I need to use the modal window
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
+      | config  | value        | plugin      |
       | toolbar | math = wiris | editor_atto |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And the "mathjaxloader" filter is "off"
     And the "urltolink" filter is "off"

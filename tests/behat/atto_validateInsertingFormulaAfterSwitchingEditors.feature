@@ -1,19 +1,19 @@
 @atto @atto_wiris @wiris_mathtype @atto_edit_formula @atto_multiple_instances @mtmoodle-88
-Feature: Insert MathType formula with atto editor
-In order to check if MathType formula can be displayed correctly
-As an admin
-I need to create a MathType formula
+Feature: Insert MathType formula after editor switch
+  In order to check if MathType formula can be displayed correctly
+  As an admin
+  I need to create a MathType formula
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
+      | config  | value        | plugin      |
       | toolbar | math = wiris | editor_atto |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And the "mathjaxloader" filter is "off"
     And the "urltolink" filter is "off"
